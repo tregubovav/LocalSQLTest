@@ -1,0 +1,136 @@
+object fmxMain: TfmxMain
+  Left = 0
+  Top = 0
+  Caption = 'Local SQL Example'
+  ClientHeight = 541
+  ClientWidth = 646
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object tctlMain: TTabControl
+    Align = Client
+    Size.Width = 646.000000000000000000
+    Size.Height = 541.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = PlatformDefault
+    Sizes = (
+      646s
+      519s)
+    object tiMain: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 82.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemcustom'
+      TabOrder = 0
+      Text = 'Main Query'
+      object bnavMain: TBindNavigator
+        Align = Bottom
+        Position.Y = 494.000000000000000000
+        Size.Width = 646.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        DataSource = dmlSQL.BindSourceDB1
+        xRadius = 4.000000000000000000
+        yRadius = 4.000000000000000000
+      end
+      object pnlMain: TPanel
+        Align = Top
+        Size.Width = 646.000000000000000000
+        Size.Height = 273.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object pnlMainControls: TPanel
+          Align = Bottom
+          Position.Y = 240.000000000000000000
+          Size.Width = 646.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          object btnMainRun: TButton
+            Action = acRunMain
+            Enabled = False
+            ImageIndex = -1
+            Position.X = 552.000000000000000000
+            Position.Y = 6.000000000000000000
+            TabOrder = 1
+          end
+          object btnReset: TButton
+            Action = acResetMain
+            Enabled = False
+            ImageIndex = -1
+            Position.X = 456.000000000000000000
+            Position.Y = 6.000000000000000000
+            TabOrder = 0
+          end
+        end
+        object memMain: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          DataDetectorTypes = []
+          Align = Client
+          Size.Width = 646.000000000000000000
+          Size.Height = 240.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Viewport.Width = 642.000000000000000000
+          Viewport.Height = 236.000000000000000000
+        end
+      end
+      object grdMain: TGrid
+        Align = Client
+        CanFocus = True
+        ClipChildren = True
+        Size.Width = 646.000000000000000000
+        Size.Height = 212.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Viewport.Width = 642.000000000000000000
+        Viewport.Height = 187.000000000000000000
+      end
+      object spMain: TSplitter
+        Align = Top
+        Cursor = crVSplit
+        MinSize = 20.000000000000000000
+        Position.Y = 273.000000000000000000
+        Size.Width = 646.000000000000000000
+        Size.Height = 9.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+  end
+  object bdlMain: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 28
+    Top = 357
+    object LinkGridToDataSourceBindSourceDBMain: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = dmlSQL.BindSourceDB1
+      GridControl = grdMain
+      Columns = <>
+    end
+  end
+  object acMain: TActionList
+    Left = 16
+    Top = 40
+    object acResetMain: TAction
+      Category = 'Statuses'
+      Text = 'Reset'
+      Enabled = False
+    end
+    object acRunMain: TAction
+      Category = 'Statuses'
+      Text = 'Run'
+      Enabled = False
+      OnExecute = acRunMainExecute
+      OnUpdate = acRunMainUpdate
+    end
+  end
+end
