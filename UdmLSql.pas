@@ -16,10 +16,22 @@ type
   TdmlSQL = class(TDataModule)
     lSQL: TFDLocalSQL;
     conlSQL: TFDConnection;
-    conBugzilla: TFDConnection;
-    conID: TFDConnection;
     qMain: TFDQuery;
-    BindSourceDB1: TBindSourceDB;
+    bsdblSQL: TBindSourceDB;
+    mtConnections: TFDMemTable;
+    mtConnectionsName: TStringField;
+    mtConnectionsServer: TStringField;
+    mtConnectionsusername: TStringField;
+    mtConnectionspassword: TStringField;
+    mtConnectionsDatabase: TStringField;
+    mtConnectionsConnectionParams: TMemoField;
+    mtSources: TFDMemTable;
+    mtSourcesName: TStringField;
+    mtSourcestblName: TStringField;
+    mtSourcessqlText: TMemoField;
+    mtSourcesType: TSmallintField;
+    bsdblConnections: TBindSourceDB;
+    bsdblSources: TBindSourceDB;
   private
     { Private declarations }
   public

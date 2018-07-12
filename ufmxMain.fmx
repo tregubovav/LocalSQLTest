@@ -13,31 +13,37 @@ object fmxMain: TfmxMain
     Size.Width = 646.000000000000000000
     Size.Height = 541.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 0
     TabPosition = PlatformDefault
     Sizes = (
       646s
-      519s)
-    object tiMain: TTabItem
+      515s
+      646s
+      515s
+      646s
+      515s)
+    object tiMainQuery: TTabItem
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 82.000000000000000000
-      Size.Height = 22.000000000000000000
+      Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabitemcustom'
       TabOrder = 0
       Text = 'Main Query'
+      ExplicitSize.cx = 82.000000000000000000
+      ExplicitSize.cy = 22.000000000000000000
       object bnavMain: TBindNavigator
         Align = Bottom
-        Position.Y = 494.000000000000000000
+        Position.Y = 490.000000000000000000
         Size.Width = 646.000000000000000000
         Size.Height = 25.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
-        DataSource = dmlSQL.BindSourceDB1
+        DataSource = dmlSQL.bsdblSQL
         xRadius = 4.000000000000000000
         yRadius = 4.000000000000000000
       end
@@ -88,11 +94,11 @@ object fmxMain: TfmxMain
         CanFocus = True
         ClipChildren = True
         Size.Width = 646.000000000000000000
-        Size.Height = 212.000000000000000000
+        Size.Height = 208.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         Viewport.Width = 642.000000000000000000
-        Viewport.Height = 187.000000000000000000
+        Viewport.Height = 183.000000000000000000
       end
       object spMain: TSplitter
         Align = Top
@@ -104,6 +110,59 @@ object fmxMain: TfmxMain
         Size.PlatformDefault = False
       end
     end
+    object tiDataBases: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 75.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Databases'
+      object MultiView1: TMultiView
+        NavigationPaneOptions.CollapsedWidth = 177.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object ListView1: TListView
+          ItemAppearanceClassName = 'TListItemAppearance'
+          ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+          HeaderAppearanceClassName = 'TListHeaderObjects'
+          FooterAppearanceClassName = 'TListHeaderObjects'
+          Align = Client
+          Size.Width = 177.000000000000000000
+          Size.Height = 515.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
+      end
+    end
+    object tiSources: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 62.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Sources'
+      object bnavSources: TBindNavigator
+        Align = Bottom
+        Position.Y = 490.000000000000000000
+        Size.Width = 646.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete]
+        xRadius = 4.000000000000000000
+        yRadius = 4.000000000000000000
+      end
+    end
   end
   object bdlMain: TBindingsList
     Methods = <>
@@ -112,9 +171,17 @@ object fmxMain: TfmxMain
     Top = 357
     object LinkGridToDataSourceBindSourceDBMain: TLinkGridToDataSource
       Category = 'Quick Bindings'
-      DataSource = dmlSQL.BindSourceDB1
+      DataSource = dmlSQL.bsdblSQL
       GridControl = grdMain
       Columns = <>
+    end
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = dmlSQL.bsdblConnections
+      Control = ListView1
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
     end
   end
   object acMain: TActionList

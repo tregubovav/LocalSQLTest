@@ -9,12 +9,14 @@ uses
   FMX.StdCtrls, FMX.Controls.Presentation, FMX.ScrollBox, FMX.Memo,
   FMX.TabControl, UdmLSql, Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid,
   System.Bindings.Outputs, Fmx.Bind.Editors, System.Actions, FMX.ActnList,
-  Data.Bind.Components, Data.Bind.Grid;
+  Data.Bind.Components, Data.Bind.Grid, FMX.ListView.Types,
+  FMX.ListView.Appearances, FMX.ListView.Adapters.Base, FMX.ListView,
+  FMX.MultiView;
 
 type
   TfmxMain = class(TForm)
     tctlMain: TTabControl;
-    tiMain: TTabItem;
+    tiMainQuery: TTabItem;
     bnavMain: TBindNavigator;
     pnlMain: TPanel;
     grdMain: TGrid;
@@ -28,6 +30,12 @@ type
     acMain: TActionList;
     acResetMain: TAction;
     acRunMain: TAction;
+    tiSources: TTabItem;
+    bnavSources: TBindNavigator;
+    tiDataBases: TTabItem;
+    MultiView1: TMultiView;
+    ListView1: TListView;
+    LinkListControlToField1: TLinkListControlToField;
     procedure acRunMainUpdate(Sender: TObject);
     procedure acRunMainExecute(Sender: TObject);
   private

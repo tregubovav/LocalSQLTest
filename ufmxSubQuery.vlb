@@ -5,7 +5,7 @@ Coordinates=135,143,60,33
 Coordinates=104,10,70,51
 
 []
-Coordinates=307,1,53,33
+Coordinates=307,220,82,33
 ExplicitSubNodes=Visible
 Visible=True
 
@@ -44,4 +44,10 @@ Coordinates=233,150,68,51
 
 [lbQuery]
 Coordinates=233,80,53,51
+
+[lbName]
+Coordinates=233,220,51,51
+
+[edSourceName]
+Coordinates=307,1,89,51
 

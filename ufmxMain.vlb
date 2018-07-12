@@ -1,8 +1,6 @@
-﻿[tiMain]
-Coordinates=10,78,44,33
-
-[]
-Coordinates=261,71,77,33
+﻿[]
+Coordinates=511,1,125,33
+Visible=True
 
 [tctlMain]
 Coordinates=69,78,53,33
@@ -51,6 +49,50 @@ Coordinates=31,149,69,33
 Visible=False
 Coordinates=242,169,86,33
 
-[dmlSQL.BindSourceDB1]
-Coordinates=351,34,135,87
+[tiMainQuery]
+Coordinates=10,78,73,33
+
+[bnavSources]
+Coordinates=394,140,79,51
+
+[tiSources]
+Coordinates=198,238,61,33
+
+[dmlSQL.bsdblSQL]
+Coordinates=351,34,105,87
+LayerNames=LocalSQL
+
+[dmlSQL.mtConnections]
+Visible=False
+Coordinates=641,1,131,33
+
+[dmlSQL.mtSources]
+Visible=False
+Coordinates=494,1,109,33
+
+[ListView1]
+Coordinates=520,150,89,141
+Visible=True
+LayerNames=Connections
+
+[MultiView1]
+Coordinates=424,370,67,33
+
+[dmlSQL.bsdblConnections]
+Coordinates=670,170,146,177
+LayerNames=Connections
+
+[tiDataBases]
+Coordinates=222,169,73,33
+
+[dmlSQL.bsdblSources]
+Coordinates=394,210,124,141
+
+[Module Settings]
+ModelLayerNames=LocalSQL;Connections;Sources
+ActiveLayerNames=Connections
+EditingLayerName=Connections
+
+[bnavMain]
+Coordinates=168,1,61,51
 

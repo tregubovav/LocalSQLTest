@@ -1,10 +1,4 @@
-﻿[conID]
-Coordinates=0,0,42,33
-
-[conBugzilla]
-Coordinates=61,1,72,33
-
-[conlSQL]
+﻿[conlSQL]
 Coordinates=42,52,56,33
 
 [lSQL]
@@ -14,6 +8,9 @@ Coordinates=171,1,40,33
 Coordinates=0,0,44,33
 Visible=False
 
-[BindSourceDB1]
+[]
+Coordinates=61,1,72,33
+
+[bsdblSQL]
 Coordinates=0,0,92,69
 
